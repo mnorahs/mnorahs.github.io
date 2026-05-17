@@ -119,9 +119,8 @@
 
 <section id="hero">
   <div class="hero-label">Open to new opportunities · Senior Level</div>
-  <h1>Hej!</h1>
-  <div class="hero-sub-name">I'm Sharon.</div>
-  <p class="hero-desc">Brand strategist, UX designer, and creative director rolled into one. I build things that look good, feel right, and actually work.</p>
+  <h1>Hi, I'm Sharon.</h1>
+  <div class="hero-sub-name">Brand strategist, UX designer, and creative director rolled into one. I build things that look good, feel right, and actually work.</div>
   <div class="hero-pills">
     <span class="pill">Brand Experience</span>
     <span class="pill">UX / UI Design</span>
