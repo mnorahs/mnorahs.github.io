@@ -119,8 +119,8 @@
 
 <section id="hero">
   <div class="hero-label">Open to new opportunities · Senior Level</div>
-  <h1>Mirjam Sharon</h1>
-  <div class="hero-sub-name">Schüßler</div>
+  <h1>Hej!</h1>
+  <div class="hero-sub-name">I'm Sharon.</div>
   <p class="hero-desc">Brand strategist, UX designer, and creative director rolled into one. I build things that look good, feel right, and actually work.</p>
   <div class="hero-pills">
     <span class="pill">Brand Experience</span>
@@ -132,7 +132,7 @@
   <a href="#contact" class="btn">Get in touch</a>
 </section>
 
-<div class="rule"></div>
+
 
 <section id="about">
   <div class="about-grid">
