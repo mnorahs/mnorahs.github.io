@@ -120,7 +120,7 @@
 <section id="hero">
   <div class="hero-label">Open to new opportunities · Senior Level</div>
   <h1>Hi, I'm Sharon.</h1>
-  <div class="hero-sub-name">Brand strategist, UX designer, and creative director rolled into one. I build things that look good, feel right, and actually work.</div>
+  <div class="hero-sub-name"><p>Brand strategist, UX designer, and creative director rolled into one.</p> <p>I build things that look good, feel right, and actually work.</p></div>
   <div class="hero-pills">
     <span class="pill">Brand Experience</span>
     <span class="pill">UX / UI Design</span>
@@ -140,9 +140,9 @@
     </div>
     <div class="about-right">
       <div class="sec-label">About</div>
-      <h2>Ten years in.<br>Still obsessed with getting it right.</h2>
+      <h2>Ten years in.<br>Still obsessed with growing each day.</h2>
       <p>I'm Mirjam — a designer, strategist, and creative generalist who's spent the last decade working where brand, UX, and marketing collide. I've led teams, shipped products, built design systems from scratch, and run campaigns that actually moved the needle.</p>
-      <p>Right now I'm Brand Experience Lead at APARI Software in London, where I own the visual and strategic identity of the product — from positioning to pixels. Before that, I spent years in UX at Eplan and in content and art direction at Salt Works, which means I'm equally comfortable in a design sprint and on a film set.</p>
+      <p>Right now I'm Brand Experience Lead at APARI Software in UK, where I own the visual and strategic identity of the product — from positioning to pixels. Before that, I spent years in UX at Eplan and in content and art direction at Salt Works, which means I'm equally comfortable in a design sprint and on a film set.</p>
       <p>I care about work that's thoughtful, well-crafted, and built to last. If that sounds like what you're looking for, let's talk.</p>
       <div class="lang-row">
         <div class="lang-item"><strong>German</strong>Native</div>
