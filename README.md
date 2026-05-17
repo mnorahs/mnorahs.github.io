@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -17,7 +16,7 @@
     --sans: 'Syne', sans-serif;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; font-weight: 300; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 18px; line-height: 1.7; font-weight: 300; }
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
