@@ -111,7 +111,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
+    <li><a href="#projects">Volunteering</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -132,7 +132,7 @@
   <a href="#contact" class="btn">Get in touch</a>
 </section>
 
-
+<div class="rule"></div>
 
 <section id="about">
   <div class="about-grid">
@@ -283,7 +283,6 @@
   <h2>The best way to find yourself is to lose yourself in the service of others.</h2>
   <p style="color: var(--muted); font-size: 14px; max-width: 52ch; margin-bottom: 3rem; margin-top: -1.5rem;">These projects were entirely unpaid — taken on because the briefs were interesting, the causes worth it, or both.</p>
   <div class="proj-grid">
-
     <div class="proj-card">
       <div class="proj-year">2016</div>
       <div class="proj-name">ICAN Germany</div>
@@ -291,7 +290,6 @@
       <p class="proj-desc">Developed the full crossmedia campaign concept and design for ICAN Germany — the German branch of the Nobel Peace Prize–winning International Campaign to Abolish Nuclear Weapons.</p>
       <span class="proj-tag">Campaign</span><span class="proj-tag">Crossmedia</span><span class="proj-tag">Design</span>
     </div>
-
     <div class="proj-card">
       <div class="proj-year">2016</div>
       <div class="proj-name">Oberwerth Relaunch</div>
@@ -299,7 +297,6 @@
       <p class="proj-desc">Took the brand from the ground up — full relaunch concept spanning identity, messaging, and visual language across every channel.</p>
       <span class="proj-tag">Relaunch</span><span class="proj-tag">Branding</span><span class="proj-tag">Crossmedia</span>
     </div>
-
     <div class="proj-card">
       <div class="proj-year">2016</div>
       <div class="proj-name">Highländer Reisen</div>
@@ -307,7 +304,6 @@
       <p class="proj-desc">Designed a fresh brand icon and all supporting business materials for this travel company — clean, considered, and ready to travel.</p>
       <span class="proj-tag">Logo</span><span class="proj-tag">Brand Design</span><span class="proj-tag">Print</span>
     </div>
-
     <div class="proj-card">
       <div class="proj-year">2016</div>
       <div class="proj-name">POWWOWYOU Festival</div>
@@ -315,7 +311,6 @@
       <p class="proj-desc">Full rebrand and crossmedia campaign for this city-run cultural festival. Volunteered across concept, design, and hands-on production — start to finish.</p>
       <span class="proj-tag">Rebranding</span><span class="proj-tag">Campaign</span><span class="proj-tag">Festival</span>
     </div>
-
     <div class="proj-card">
       <div class="proj-year">2015</div>
       <div class="proj-name">Pokal der Unternehmen</div>
@@ -323,7 +318,6 @@
       <p class="proj-desc">Produced the image film, making-of, and trailer for this annual business sports event. Handled everything from shoot to final cut.</p>
       <span class="proj-tag">Video</span><span class="proj-tag">Film</span><span class="proj-tag">Event</span>
     </div>
-
     <div class="proj-card">
       <div class="proj-year">2015</div>
       <div class="proj-name">Schloss und Park Benrath</div>
@@ -362,7 +356,7 @@
     <div class="sec-label">Certifications</div>
     <div class="cert-row">
       <div><div class="cert-year">2021</div></div>
-      <div><div class="cert-name">UX Foundation & Requirement Engineering</div><div class="cert-place">Centigrade GmbH, Saarbrücken</div></div>
+      <div><div class="cert-name">UX Foundation & Requirement Engineer</div><div class="cert-place">Centigrade GmbH, Saarbrücken</div></div>
     </div>
     <div class="cert-row">
       <div><div class="cert-year">2016</div></div>
@@ -389,11 +383,7 @@
     <a href="https://linkedin.com/in/mschuess" target="_blank" class="contact-btn">
       <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><line x1="8" y1="10" x2="8" y2="17"/><circle cx="8" cy="7" r="0.5" fill="currentColor" stroke="none"/><path d="M12 10v7M12 13a3 3 0 0 1 6 0v4"/></svg>
       LinkedIn
-    </a>
-    <a href="tel:+4917823040630" class="contact-btn">
-      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.97.72 2.9a2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.18-1.18a2 2 0 0 1 2.11-.45c.93.35 1.9.6 2.9.72A2 2 0 0 1 22 16.92z"/></svg>
-      +49 178 2304063
-    </a>
+    </a
     <a href="https://sharonschuessler.portfolio.site" target="_blank" class="contact-btn">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
       Portfolio
@@ -401,6 +391,6 @@
   </div>
 </section>
 
-<footer>© 2025 Mirjam Sharon Schüßler · Wuppertal, Germany</footer>
+<footer>© 2026 Mirjam Sharon Schüßler · NRW, Germany</footer>
 </body>
 </html>
