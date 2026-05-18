@@ -109,7 +109,7 @@
   <a href="#hero" class="nav-logo">Mirjam Sharon Schüßler</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="work">Work</a></li>
+    <li><a href="[#work](https://github.com/mnorahs/mnorahs.github.io/blob/4aabd3caacb238411a5e5439c11027341494ccda/work)">Work</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Volunteering</a></li>
