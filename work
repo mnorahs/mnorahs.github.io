@@ -1,0 +1,731 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Mirjam Sharon Schüßler</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #F5F2EE;
+    --bg-card: #EFEBE5;
+    --bg-dark: #2E2E2C;
+    --text: #2E2E2C;
+    --muted: #7A7870;
+    --subtle: #B0ADA8;
+    --border: rgba(46,46,44,0.1);
+    --border-light: rgba(46,46,44,0.06);
+    --sans: 'Syne', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; font-weight: 300; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(245,242,238,0.93);
+    backdrop-filter: blur(14px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-logo { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); text-decoration: none; font-weight: 500; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .rule { width: 100%; max-width: 1080px; margin: 0 auto; height: 0.5px; background: var(--border); }
+
+  /* HERO */
+  .page-hero {
+    max-width: 1080px; margin: 0 auto;
+    padding: 11rem 3rem 5rem;
+  }
+  .hero-eyebrow {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--subtle); margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .hero-eyebrow::before { content: ''; width: 2.5rem; height: 0.5px; background: var(--subtle); }
+  .page-hero h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 500; letter-spacing: -0.025em; line-height: 1.0;
+    margin-bottom: 2rem; max-width: 16ch;
+  }
+  .page-hero p {
+    font-size: 16px; color: var(--muted); max-width: 50ch;
+    line-height: 1.75; font-weight: 300;
+  }
+
+  /* FILTER BAR */
+  .filter-bar {
+    max-width: 1080px; margin: 0 auto;
+    padding: 0 3rem 4rem;
+    display: flex; gap: 0.5rem; flex-wrap: wrap;
+  }
+  .filter-btn {
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.4rem 1.1rem; border: 0.5px solid var(--border);
+    border-radius: 2rem; color: var(--muted); background: transparent;
+    cursor: pointer; font-family: var(--sans); transition: all 0.2s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--text); color: var(--bg); border-color: var(--text);
+  }
+
+  /* PROJECT ENTRIES — alternating full-bleed layout */
+  .projects-list { max-width: 1080px; margin: 0 auto; padding: 0 3rem; }
+
+  .project-entry {
+    padding: 6rem 0;
+    border-top: 0.5px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .project-entry:last-child { border-bottom: 0.5px solid var(--border); }
+  .project-entry.reverse { direction: rtl; }
+  .project-entry.reverse > * { direction: ltr; }
+
+  /* Project visual */
+  .proj-visual {
+    position: relative;
+    aspect-ratio: 4/3;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--bg-card);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .proj-visual-inner {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 1rem; padding: 2rem;
+  }
+  /* Unique colour per project */
+  .c-sage    { background: #D6E0D6; }
+  .c-slate   { background: #D4D8E2; }
+  .c-sand    { background: #E2D8CC; }
+  .c-rose    { background: #E2D0CC; }
+  .c-teal    { background: #CCE0DC; }
+  .c-mauve   { background: #DDD0E2; }
+  .c-ochre   { background: #E2DCC8; }
+
+  .proj-icon {
+    width: 72px; height: 72px; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.6);
+    font-size: 2rem;
+  }
+  .proj-screen {
+    width: 85%; background: #fff;
+    border-radius: 8px; padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    font-family: var(--sans);
+  }
+  .screen-bar {
+    display: flex; gap: 5px; margin-bottom: 1rem;
+  }
+  .screen-bar span {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(0,0,0,0.15);
+  }
+  .screen-line { height: 8px; border-radius: 4px; background: rgba(0,0,0,0.08); margin-bottom: 6px; }
+  .screen-line.dark { background: rgba(0,0,0,0.18); width: 60%; }
+  .screen-line.short { width: 40%; }
+  .screen-row { display: flex; gap: 8px; margin-top: 10px; }
+  .screen-block { flex: 1; height: 40px; border-radius: 4px; background: rgba(0,0,0,0.06); }
+  .screen-badge { display: inline-block; height: 20px; width: 60px; border-radius: 10px; background: rgba(0,0,0,0.1); }
+
+  /* Project copy */
+  .proj-copy {}
+  .proj-number {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--subtle); margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .proj-number::after { content: ''; flex: 0 0 2rem; height: 0.5px; background: var(--subtle); }
+  .proj-copy h2 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 500; letter-spacing: -0.02em; line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+  .proj-copy .proj-subtitle {
+    font-size: 14px; color: var(--subtle); margin-bottom: 2rem;
+    font-weight: 400; letter-spacing: 0.02em;
+  }
+  .proj-block { margin-bottom: 1.75rem; }
+  .proj-block-label {
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--subtle); margin-bottom: 0.4rem;
+  }
+  .proj-block p {
+    font-size: 14px; color: var(--muted); line-height: 1.75;
+  }
+  .proj-meta {
+    display: flex; gap: 2rem; margin-top: 2.5rem;
+    padding-top: 1.5rem; border-top: 0.5px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .proj-meta-item {}
+  .proj-meta-item .label {
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--subtle); display: block; margin-bottom: 0.2rem;
+  }
+  .proj-meta-item .value {
+    font-size: 13px; color: var(--text); font-weight: 500;
+  }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 2rem; }
+  .proj-tag {
+    font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--subtle); border: 0.5px solid var(--border);
+    border-radius: 2rem; padding: 0.25rem 0.7rem;
+  }
+
+  /* NDA notice */
+  .nda-notice {
+    display: flex; align-items: flex-start; gap: 0.6rem;
+    margin-top: 1.5rem; padding: 0.85rem 1.1rem;
+    background: var(--bg-card); border-radius: 4px;
+    font-size: 12px; color: var(--muted); line-height: 1.5;
+  }
+  .nda-notice svg { flex-shrink: 0; margin-top: 2px; opacity: 0.5; }
+
+  /* VOLUNTARY SECTION */
+  .vol-section {
+    background: var(--bg-dark);
+    margin-top: 6rem; padding: 6rem 0;
+  }
+  .vol-inner {
+    max-width: 1080px; margin: 0 auto; padding: 0 3rem;
+  }
+  .vol-eyebrow {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .vol-eyebrow::before { content: ''; width: 2rem; height: 0.5px; background: rgba(255,255,255,0.25); }
+  .vol-section h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 500; letter-spacing: -0.02em;
+    color: #F5F2EE; margin-bottom: 0.75rem;
+  }
+  .vol-section .vol-desc {
+    font-size: 14px; color: rgba(255,255,255,0.45);
+    max-width: 50ch; margin-bottom: 3.5rem; line-height: 1.75;
+  }
+  .vol-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px; overflow: hidden;
+  }
+  .vol-card {
+    background: rgba(255,255,255,0.03);
+    padding: 2rem; transition: background 0.2s;
+  }
+  .vol-card:hover { background: rgba(255,255,255,0.07); }
+  .vol-year {
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); margin-bottom: 1rem;
+  }
+  .vol-name {
+    font-size: 15px; font-weight: 500; color: #F5F2EE;
+    margin-bottom: 0.3rem; letter-spacing: -0.01em;
+  }
+  .vol-client {
+    font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); margin-bottom: 1rem;
+  }
+  .vol-desc-text { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.65; }
+  .vol-tag {
+    display: inline-block; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); border: 0.5px solid rgba(255,255,255,0.15);
+    border-radius: 2rem; padding: 0.2rem 0.6rem; margin-top: 0.75rem; margin-right: 0.3rem;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center; padding: 2.5rem;
+    font-size: 11px; color: var(--subtle);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    border-top: 0.5px solid var(--border);
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Mirjam Sharon Schüßler</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#experience">Experience</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="portfolio.html" class="active">Work</a></li>
+    <li><a href="index.html#education">Education</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="hero-eyebrow">Selected Work</div>
+  <h1>Projects that made a dent.</h1>
+  <p>A decade of work across UX, brand, and marketing — condensed into the projects that challenged me most and taught me the rest. Many clients require confidentiality, so I show what I can and describe the rest honestly.</p>
+</div>
+
+<!-- FILTER -->
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
+  <button class="filter-btn" onclick="filterProjects('ux', this)">UX / Product</button>
+  <button class="filter-btn" onclick="filterProjects('brand', this)">Brand & Identity</button>
+  <button class="filter-btn" onclick="filterProjects('content', this)">Content & Film</button>
+</div>
+
+<div class="rule"></div>
+
+<!-- PROJECTS LIST -->
+<div class="projects-list">
+
+  <!-- 1 — eManage -->
+  <div class="project-entry" data-cat="ux">
+    <div class="proj-visual c-sage">
+      <div class="proj-visual-inner">
+        <div class="proj-screen">
+          <div class="screen-bar"><span></span><span></span><span></span></div>
+          <div class="screen-line dark"></div>
+          <div class="screen-line"></div>
+          <div class="screen-line short"></div>
+          <div class="screen-row">
+            <div class="screen-block"></div>
+            <div class="screen-block"></div>
+            <div class="screen-block"></div>
+          </div>
+          <div class="screen-row" style="margin-top:8px">
+            <div class="screen-block" style="height:28px"></div>
+            <div class="screen-block" style="height:28px; flex:2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="proj-copy">
+      <div class="proj-number">01 · UX/UI Design · Eplan</div>
+      <h2>eManage</h2>
+      <p class="proj-subtitle">A cloud app that makes complex engineering collaboration feel simple.</p>
+
+      <div class="proj-block">
+        <div class="proj-block-label">The Problem</div>
+        <p>Engineering teams at Eplan were juggling project files across disconnected systems — no single place to exchange, manage, or extend their work. The ask was straightforward: fix that. The execution was not.</p>
+      </div>
+
+      <div class="proj-block">
+        <div class="proj-block-label">What I did</div>
+        <p>I led a full 5-day design sprint with the development team to align on scope before a single pixel was placed. From there I owned the entire design process: research, information architecture, prototyping, and UI. Beyond shipping a functional cloud project management system, I co-wrote the go-to-market strategy, executive summaries, and pitch decks for the platform's future roadmap.</p>
+      </div>
+
+      <div class="proj-block">
+        <div class="proj-block-label">The result</div>
+        <p>A production-ready cloud web app — including a product name and icon — launched on schedule for Q3 2020. A rare case where design led strategy, not just aesthetics.</p>
+      </div>
+
+      <div class="nda-notice">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Visual assets are under NDA. The description reflects my direct involvement and is shared with permission.
+      </div>
+
+      <div class="proj-tags">
+        <span class="proj-tag">UX Research</span>
+        <span class="proj-tag">Design Sprint</span>
+        <span class="proj-tag">Prototyping</span>
+        <span class="proj-tag">UI Design</span>
+        <span class="proj-tag">Go-to-Market</span>
+      </div>
+
+      <div class="proj-meta">
+        <div class="proj-meta-item"><span class="label">Client</span><span class="value">Eplan GmbH & Co. KG</span></div>
+        <div class="proj-meta-item"><span class="label">Year</span><span class="value">2020</span></div>
+        <div class="proj-meta-item"><span class="label">Role</span><span class="value">Lead UX/UI Designer</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 — Testing Lab -->
+  <div class="project-entry reverse" data-cat="ux">
+    <div class="proj-visual c-slate">
+      <div class="proj-visual-inner">
+        <div class="proj-screen">
+          <div class="screen-bar"><span></span><span></span><span></span></div>
+          <div class="screen-line dark" style="width:45%"></div>
+          <div class="screen-line" style="width:80%; margin-top:4px"></div>
+          <div style="margin-top:14px; display:flex; gap:6px; flex-wrap:wrap;">
+            <span class="screen-badge"></span>
+            <span class="screen-badge" style="width:40px"></span>
+            <span class="screen-badge" style="width:75px"></span>
+          </div>
+          <div class="screen-row" style="margin-top:12px">
+            <div class="screen-block" style="height:56px; border-radius:6px;"></div>
+            <div class="screen-block" style="height:56px; border-radius:6px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="proj-copy">
+      <div class="proj-number">02 · UX/UI Design · Eplan</div>
+      <h2>Testing Lab*</h2>
+      <p class="proj-subtitle">Breaking down the wall between product teams and the people actually using the software.</p>
+
+      <div class="proj-block">
+        <div class="proj-block-label">The Problem</div>
+        <p>Product development at scale suffers from a familiar blind spot: the people building the software rarely see how it's used in the wild. Eplan wanted to change that — not just internally, but by inviting customers into the process too. The question was how to design a space that felt genuinely collaborative, not performative.</p>
+      </div>
+
+      <div class="proj-block">
+        <div class="proj-block-label">What I did</div>
+        <p>I kicked off the project with a design thinking workshop, then moved straight into user interviews — making sure real needs shaped the concept before any design decisions were made. The output was a collaborative cloud platform: a digital playground for product updates, idea exchange, and feature testing — accessible to customers, employees, and dev teams alike.</p>
+      </div>
+
+      <div class="proj-block">
+        <div class="proj-block-label">Ongoing</div>
+        <p>The first wireframes and prototypes were validated with end-users. The project continued to evolve — a platform built to grow as the community around it grows.</p>
+      </div>
+
+      <div class="nda-notice">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Name changed and visuals withheld per client confidentiality agreement.
+      </div>
+
+      <div class="proj-tags">
+        <span class="proj-tag">Design Thinking</span>
+        <span class="proj-tag">User Interviews</span>
+        <span class="proj-tag">Wireframing</span>
+        <span class="proj-tag">Prototyping</span>
+        <span class="proj-tag">Collaboration Platform</span>
+      </div>
+
+      <div class="proj-meta">
+        <div class="proj-meta-item"><span class="label">Client</span><span class="value">Eplan GmbH & Co. KG</span></div>
+        <div class="proj-meta-item"><span class="label">Year</span><span class="value">2021 – 2022</span></div>
+        <div class="proj-meta-item"><span class="label">Role</span><span class="value">Lead UX/UI Designer</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 — McDonald's Digital Ads -->
+  <div class="project-entry" data-cat="content">
+    <div class="proj-visual c-sand">
+      <div class="proj-visual-inner">
+        <div style="width:75%; background:#fff; border-radius:12px; overflow:hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+          <div style="background:#DA291C; padding:1.25rem 1.5rem;">
+            <div style="width:40px; height:12px; background:rgba(255,255,255,0.4); border-radius:6px;"></div>
+          </div>
+          <div style="padding:1.25rem 1.5rem;">
+            <div style="height:9px; background:#eee; border-radius:4px; width:80%; margin-bottom:7px;"></div>
+            <div style="height:9px; background:#eee; border-radius:4px; width:55%; margin-bottom:16px;"></div>
+            <div style="height:64px; background:#F5F2EE; border-radius:6px; margin-bottom:12px;"></div>
+            <div style="height:28px; background:#DA291C; border-radius:20px; width:50%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="proj-copy">
+      <div class="proj-number">03 · Art Direction · Salt Works</div>
+      <h2>McDonald's Germany — Vegan Burger Campaign</h2>
+      <p class="proj-subtitle">Making plant-based feel like a no-brainer — for an audience that wasn't asking for it.</p>
+
+      <div class="proj-block">
+        <div class="proj-block-label">The Challenge</div>
+        <p>Launching a vegan burger to McDonald's Germany's core audience — who largely weren't vegan and weren't particularly curious about becoming so — required creative that was confident, not preachy. The campaign had to live across Facebook, Instagram, the McDonald's website, and the mobile app, each with its own format and audience expectations.</p>
+      </div>
+
+      <div class="proj-block">
+        <div class="proj-block-label">What I did</div>
+        <p>As part of the art direction team at Salt Works, I concepted and produced the digital ad suite for the campaign. Formats ranged from social statics and animations to in-app creatives. The creative challenge: make something feel fresh and modern without alienating the core McD customer. For the record — we tested the product ourselves. It was genuinely good.</p>
+      </div>
+
+      <div class="nda-notice">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Campaign assets are subject to client confidentiality. The description reflects my direct involvement.
+      </div>
+
+      <div class="proj-tags">
+        <span class="proj-tag">Art Direction</span>
+        <span class="proj-tag">Digital Advertising</span>
+        <span class="proj-tag">Social Media</span>
+        <span class="proj-tag">Mobile</span>
+      </div>
+
+      <div class="proj-meta">
+        <div class="proj-meta-item"><span class="label">Client</span><span class="value">McDonald's Germany</span></div>
+        <div class="proj-meta-item"><span class="label">Year</span><span class="value">2019</span></div>
+        <div class="proj-meta-item"><span class="label">Role</span><span class="value">Art Director</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 — McDonald's 365 Social Campaign -->
+  <div class="project-entry reverse" data-cat="content">
+    <div class="proj-visual c-rose">
+      <div class="proj-visual-inner">
+        <div style="width:70%; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.1);">
+          <div style="height:100px; background:#F0E8E8; display:flex; align-items:center; justify-content:center;">
+            <div style="width:48px; height:48px; background:rgba(218,41,28,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+              <div style="width:16px; height:16px; background:#DA291C; border-radius:3px;"></div>
+            </div>
+          </div>
+          <div style="padding:1.25rem;">
+            <div style="height:8px; background:#eee; border-radius:4px; width:70%; margin-bottom:6px;"></div>
+            <div style="height:8px; background:#eee; border-radius:4px; width:45%;"></div>
+            <div style="display:flex; gap:6px; margin-top:12px;">
+              <div style="height:24px; flex:1; background:#F5F2EE; border-radius:4px;"></div>
+              <div style="height:24px; flex:1; background:#F5F2EE; border-radius:4px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="proj-copy">
+      <div class="proj-number">04 · Content Creation · Salt Works</div>
+      <h2>McDonald's Germany — 365 Social Campaign</h2>
+      <p class="proj-subtitle">A year of content. One consistent creative voice across every scroll.</p>
+
+      <div class="proj-block">
+        <div class="proj-block-label">The Scale</div>
+        <p>A 365-day social media campaign for McDonald's Germany is exactly what it sounds like: content for every single day of the year, across Facebook and Instagram. That's not a project — that's a machine. And it only works if the creative team understands both the brand voice and the platform mechanics inside out.</p>
+      </div>
+
+      <div class="proj-block">
+        <div class="proj-block-label">What I did</div>
+        <p>I was part of the editorial and content creation team responsible for scripting, producing, and editing video content within this always-on campaign. Working at this scale taught me how to maintain quality under pressure, how editorial thinking shapes visual storytelling, and how social content needs to be designed for the thumb-stop moment first.</p>
+      </div>
+
+      <div class="nda-notice">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Assets are subject to client confidentiality.
+      </div>
+
+      <div class="proj-tags">
+        <span class="proj-tag">Content Strategy</span>
+        <span class="proj-tag">Video Production</span>
+        <span class="proj-tag">Editorial</span>
+        <span class="proj-tag">Social Media</span>
+      </div>
+
+      <div class="proj-meta">
+        <div class="proj-meta-item"><span class="label">Client</span><span class="value">McDonald's Germany</span></div>
+        <div class="proj-meta-item"><span class="label">Year</span><span class="value">2018 – 2019</span></div>
+        <div class="proj-meta-item"><span class="label">Role</span><span class="value">Content Creator / Editor</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 — BMW Event / invenio -->
+  <div class="project-entry" data-cat="brand">
+    <div class="proj-visual c-teal">
+      <div class="proj-visual-inner">
+        <div style="width:80%; background:#fff; border-radius:8px; box-shadow:0 8px 32px rgba(0,0,0,0.08); padding:1.75rem;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1.25rem;">
+            <div>
+              <div style="height:10px; background:#1C69D4; border-radius:5px; width:48px; margin-bottom:6px;"></div>
+              <div style="height:7px; background:#eee; border-radius:4px; width:72px;"></div>
+            </div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#F5F2EE; display:flex; align-items:center; justify-content:center;">
+              <div style="width:14px; height:14px; border-radius:50%; border: 2px solid #1C69D4;"></div>
+            </div>
+          </div>
+          <div style="height:48px; background:#F5F2EE; border-radius:6px; margin-bottom:10px;"></div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+            <div style="height:32px; background:#E8F0FB; border-radius:4px;"></div>
+            <div style="height:32px; background:#E8F0FB; border-radius:4px;"></div>
+            <div style="height:32px; background:#eee; border-radius:4px;"></div>
+            <div style="height:32px; background:#eee; border-radius:4px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="proj-copy">
+      <div class="proj-number">05 · Event Design & Art Direction · invenio</div>
+      <h2>BMW — Live Communication & Event Design</h2>
+      <p class="proj-subtitle">When change needs to be felt, not just announced.</p>
+
+      <div class="proj-block">
+        <div class="proj-block-label">The Context</div>
+        <p>Change management communication inside a company like BMW isn't just an internal memo — it's an experience that has to land with thousands of people across different contexts, seniorities, and emotional starting points. The events we designed had to make the abstract tangible and the corporate human.</p>
+      </div>
+
+      <div class="proj-block">
+        <div class="proj-block-label">What I did</div>
+        <p>As Art & Event Consultant at invenio Communication Solutions, I co-concepted and art directed on-site events and all supporting materials for BMW. The work spanned spatial design, print collateral, and stage design — every touchpoint considered as part of a single coherent experience. I also contributed to an internal image film produced for the client during this period.</p>
+      </div>
+
+      <div class="nda-notice">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Visuals under NDA. Description shared with permission.
+      </div>
+
+      <div class="proj-tags">
+        <span class="proj-tag">Event Design</span>
+        <span class="proj-tag">Art Direction</span>
+        <span class="proj-tag">Change Communication</span>
+        <span class="proj-tag">Print</span>
+        <span class="proj-tag">Video</span>
+      </div>
+
+      <div class="proj-meta">
+        <div class="proj-meta-item"><span class="label">Client</span><span class="value">BMW via invenio</span></div>
+        <div class="proj-meta-item"><span class="label">Year</span><span class="value">2017 – 2018</span></div>
+        <div class="proj-meta-item"><span class="label">Role</span><span class="value">Art & Event Consultant</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 — APARI Brand System -->
+  <div class="project-entry reverse" data-cat="brand">
+    <div class="proj-visual c-mauve">
+      <div class="proj-visual-inner">
+        <div style="width:80%; background:#fff; border-radius:8px; box-shadow:0 8px 32px rgba(0,0,0,0.08); padding:1.75rem;">
+          <div style="margin-bottom:1.25rem;">
+            <div style="height:12px; background:#5C3D8F; border-radius:6px; width:56px; margin-bottom:8px;"></div>
+            <div style="height:7px; background:#eee; border-radius:4px; width:80%;"></div>
+          </div>
+          <div style="display:flex; gap:8px; margin-bottom:12px;">
+            <div style="width:28px; height:28px; border-radius:6px; background:#5C3D8F;"></div>
+            <div style="width:28px; height:28px; border-radius:6px; background:#8B6DB5;"></div>
+            <div style="width:28px; height:28px; border-radius:6px; background:#C4A8E0;"></div>
+            <div style="width:28px; height:28px; border-radius:6px; background:#E8DEF5;"></div>
+            <div style="width:28px; height:28px; border-radius:6px; background:#F5F2EE; border:1px solid #eee;"></div>
+          </div>
+          <div style="background:#F5F2EE; border-radius:6px; padding:10px; margin-bottom:8px;">
+            <div style="height:7px; background:#ddd; border-radius:4px; width:60%; margin-bottom:5px;"></div>
+            <div style="height:7px; background:#eee; border-radius:4px; width:40%;"></div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+            <div style="height:24px; background:#5C3D8F; border-radius:4px; opacity:0.15;"></div>
+            <div style="height:24px; background:#eee; border-radius:4px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="proj-copy">
+      <div class="proj-number">06 · Brand & UX · APARI Software</div>
+      <h2>APARI — Brand Experience & Design System</h2>
+      <p class="proj-subtitle">Building the visual and strategic identity of a fintech product from the inside out.</p>
+
+      <div class="proj-block">
+        <div class="proj-block-label">The Scope</div>
+        <p>APARI is a London-based fintech software company with an ambitious product and a brand that needed to grow up fast. The challenge: create a brand experience that could carry the product through a white-label strategy — flexible enough for partners, distinctive enough to stand on its own.</p>
+      </div>
+
+      <div class="proj-block">
+        <div class="proj-block-label">What I did</div>
+        <p>Starting as UX Designer in 2022 and growing into Brand Experience Lead, I built the product's Design System from scratch — covering web and product surfaces — and then took ownership of the full brand identity. That meant writing the Brand Guidelines, leading white-label projects for partner companies, and setting the design direction across marketing and product simultaneously. I also led and grew the design team through this period.</p>
+      </div>
+
+      <div class="proj-block">
+        <div class="proj-block-label">Still live</div>
+        <p>This is ongoing work. The system continues to evolve as the product does — which is exactly how good design infrastructure should behave.</p>
+      </div>
+
+      <div class="proj-tags">
+        <span class="proj-tag">Brand Strategy</span>
+        <span class="proj-tag">Design System</span>
+        <span class="proj-tag">UX Research</span>
+        <span class="proj-tag">Team Lead</span>
+        <span class="proj-tag">White Label</span>
+      </div>
+
+      <div class="proj-meta">
+        <div class="proj-meta-item"><span class="label">Client</span><span class="value">APARI Software Ltd</span></div>
+        <div class="proj-meta-item"><span class="label">Years</span><span class="value">2022 – Present</span></div>
+        <div class="proj-meta-item"><span class="label">Role</span><span class="value">Brand Experience Lead</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /projects-list -->
+
+
+<!-- VOLUNTARY WORK — dark section -->
+<div class="vol-section">
+  <div class="vol-inner">
+    <div class="vol-eyebrow">Pro Bono & Voluntary</div>
+    <h2>Doing good work, for free.</h2>
+    <p class="vol-desc">These projects were entirely unpaid — taken on because the briefs were interesting, the causes worth it, or both.</p>
+
+    <div class="vol-grid">
+
+      <div class="vol-card">
+        <div class="vol-year">2016</div>
+        <div class="vol-name">ICAN Germany</div>
+        <div class="vol-client">Non-profit · Campaign</div>
+        <p class="vol-desc-text">Full crossmedia campaign concept and design for the German branch of ICAN — the Nobel Peace Prize–winning International Campaign to Abolish Nuclear Weapons.</p>
+        <span class="vol-tag">Campaign</span><span class="vol-tag">Crossmedia</span>
+      </div>
+
+      <div class="vol-card">
+        <div class="vol-year">2016</div>
+        <div class="vol-name">Oberwerth Relaunch</div>
+        <div class="vol-client">Brand · Crossmedia</div>
+        <p class="vol-desc-text">Took the brand from the ground up — full relaunch concept spanning identity, messaging, and visual language across every channel.</p>
+        <span class="vol-tag">Relaunch</span><span class="vol-tag">Branding</span>
+      </div>
+
+      <div class="vol-card">
+        <div class="vol-year">2016</div>
+        <div class="vol-name">Highländer Reisen</div>
+        <div class="vol-client">Brand Identity</div>
+        <p class="vol-desc-text">Designed a fresh brand icon and all supporting business materials for this travel company — clean, considered, and built to travel.</p>
+        <span class="vol-tag">Logo</span><span class="vol-tag">Print</span>
+      </div>
+
+      <div class="vol-card">
+        <div class="vol-year">2016</div>
+        <div class="vol-name">POWWOWYOU Festival</div>
+        <div class="vol-client">Stadt Solingen · Festival</div>
+        <p class="vol-desc-text">Full rebrand and crossmedia campaign — concept, design, and hands-on production for this city-run cultural festival in Solingen. Start to finish.</p>
+        <span class="vol-tag">Rebranding</span><span class="vol-tag">Festival</span>
+      </div>
+
+      <div class="vol-card">
+        <div class="vol-year">2015</div>
+        <div class="vol-name">Pokal der Unternehmen</div>
+        <div class="vol-client">Video Production</div>
+        <p class="vol-desc-text">Produced the image film, making-of, and trailer for this annual business sports event. From shoot to final cut.</p>
+        <span class="vol-tag">Video</span><span class="vol-tag">Film</span>
+      </div>
+
+      <div class="vol-card">
+        <div class="vol-year">2015</div>
+        <div class="vol-name">Schloss und Park Benrath</div>
+        <div class="vol-client">Event · Editorial</div>
+        <p class="vol-desc-text">Event concept, design, and editorial for one of Düsseldorf's most iconic cultural venues. Heritage meets fresh creative thinking.</p>
+        <span class="vol-tag">Event</span><span class="vol-tag">Editorial</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <a href="index.html">← Back to main site</a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  © 2025 Mirjam Sharon Schüßler · Wuppertal
+</footer>
+
+<script>
+function filterProjects(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.project-entry').forEach(el => {
+    if (cat === 'all' || el.dataset.cat === cat) {
+      el.style.display = 'grid';
+    } else {
+      el.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>
