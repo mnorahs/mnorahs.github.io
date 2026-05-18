@@ -377,16 +377,13 @@
   <div class="contact-row">
     <a href="mailto:schuessler.mirjam@web.de" class="contact-btn">
       <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-      schuessler.mirjam@web.de
-    </a>
+      schuessler.mirjam@web.de </a>
     <a href="https://linkedin.com/in/mschuess" target="_blank" class="contact-btn">
       <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><line x1="8" y1="10" x2="8" y2="17"/><circle cx="8" cy="7" r="0.5" fill="currentColor" stroke="none"/><path d="M12 10v7M12 13a3 3 0 0 1 6 0v4"/></svg>
-      LinkedIn
-    </a
+      LinkedIn </a
     <a href="https://sharonschuessler.portfolio.site" target="_blank" class="contact-btn">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-      Portfolio
-    </a>
+      Portfolio </a>
   </div>
 </section>
 
