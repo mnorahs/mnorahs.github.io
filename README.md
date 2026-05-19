@@ -42,7 +42,7 @@
   .btn { display: inline-block; padding: 0.85rem 2.2rem; background: var(--text); color: var(--bg); font-family: var(--sans); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; font-weight: 500; border-radius: 2rem; transition: opacity 0.2s; }
   .btn:hover { opacity: 0.7; }
   .rule { width: 100%; max-width: 1080px; margin: 0 auto; height: 0.5px; background: var(--border); }
-  .sec-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--subtle); margin-bottom: 0.85rem; }
+  .sec-label { font-size: 16px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--subtle); margin-bottom: 0.85rem; }
   h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 3rem; }
   /* ABOUT */
   .about-grid { display: grid; grid-template-columns: 220px 1fr; gap: 5rem; align-items: start; }
